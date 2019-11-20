@@ -5,17 +5,23 @@ namespace ChallengeSets
     {
         public bool AreTwoNumbersTheSame(int num1, int num2)
         {
-            throw new NotImplementedException();
+            if (num1 == num2)
+            {
+                return true;
+            }
+            return false;
         }
 
         public double Subtract(double minuend, double subtrahend)
         {
-            throw new NotImplementedException();
+            double difference = minuend - subtrahend;
+            return difference;
         }
 
         public int Add(int number1, int number2)
         {
-            throw new NotImplementedException();
+            int sum = number1 + number2;
+            return sum;
         }
 
         public int GetSmallestNumber(int number1, int number2)
