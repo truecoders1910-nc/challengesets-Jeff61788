@@ -26,17 +26,29 @@ namespace ChallengeSets
 
         public int GetSmallestNumber(int number1, int number2)
         {
-            throw new NotImplementedException();
+            if (number1 < number2)
+            {
+                return number1;
+            }
+            return number2;
+
+
         }
 
         public long Multiply(long factor1, long factor2)
         {
-            throw new NotImplementedException();
+            long multiply = factor1 * factor2;
+            return multiply;
         }
 
         public string GetGreeting(string nameOfPerson)
         {
-            throw new NotImplementedException();
+            string greeting = $"Hello, {nameOfPerson}!";
+            if (nameOfPerson == "")
+            {
+                return "Hello!";
+            }
+            return greeting;
         }
 
         public string GetHey()
