@@ -1,53 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengeSets
 {
     public class ChallengeSet02
     {
+        private IEnumerable<int> lst;
+
         public bool CharacterIsALetter(char c)
         {
-            throw new NotImplementedException();
+            return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            throw new NotImplementedException();
+            if (vals.Length % 2 == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            if (number % 2 == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            if (num % 2 == 1 || num % 2 == -1)
+            {
+                return true;
+            }
+            return false;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            double min = numbers.Min();
+            double max = numbers.Max();
+            return min + max;
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length < str2.Length)
+            {
+                return str1.Length;
+            }
+            return str2.Length;
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            foreach (int number in numbers)
+            {
+                result += number;
+            }
+            return result;
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            foreach (int number in numbers)
+                if (number % 2 == 0)
+                {
+                    result += number;
+                }
+                return result;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+
+            sum = numbers.Sum();
+            if (sum % 2 == 1 || sum % 2 == -1)
+            {
+                return true;
+            }
+            return false;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
