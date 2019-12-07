@@ -42,6 +42,10 @@ namespace ChallengeSets
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
+            if (numbers == null || numbers.Count() == 0)
+            {
+                return 0;
+            }
             double min = numbers.Min();
             double max = numbers.Max();
             return min + max;
@@ -58,31 +62,37 @@ namespace ChallengeSets
 
         public int Sum(int[] numbers)
         {
-            int result = 0;
-            foreach (int number in numbers)
+            if (numbers == null)
             {
-                result += number;
+                return 0;
             }
-            return result;
+                return numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
         {
             int result = 0;
+            if (numbers == null)
+            {
+                return 0;
+            }
             foreach (int number in numbers)
+            {
                 if (number % 2 == 0)
                 {
                     result += number;
                 }
-                return result;
+            }
+            return result;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            int sum = 0;
-
-            sum = numbers.Sum();
-            if (sum % 2 == 1 || sum % 2 == -1)
+            if (numbers == null)
+            {
+                return false;
+            }
+            if (numbers.Sum() % 2 == 1 || numbers.Sum() % 2 == -1)
             {
                 return true;
             }
@@ -91,7 +101,11 @@ namespace ChallengeSets
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number > 0)
+            {
+                return number % 2 == 0 ? number / 2 : (number - 1) / 2;
+            }
+            return 0;
         }
     }
 }
