@@ -31,10 +31,10 @@ namespace ChallengeSets
                 {
                     result += number;
                 }
-                if (result % 2 != 0)
-                {
-                    return true;
-                }
+            }
+            if (result % 2 != 0)
+            {
+                return true;
             }
             return false;
         }
