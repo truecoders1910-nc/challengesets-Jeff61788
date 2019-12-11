@@ -6,8 +6,6 @@ namespace ChallengeSets
 {
     public class ChallengeSet02
     {
-        private IEnumerable<int> lst;
-
         public bool CharacterIsALetter(char c)
         {
             return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
