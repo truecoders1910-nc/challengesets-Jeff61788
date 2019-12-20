@@ -24,9 +24,9 @@ namespace ChallengeSets
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            string[] strings = {};
-            int minLength = strings.Min(y => y.Length);
-            return minLength;
+            string[] names = {};
+            var query = from n in names select n.Length;
+            return query.Count;
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
