@@ -24,9 +24,7 @@ namespace ChallengeSets
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            string[] names = {};
-            var query = from n in names select n.Length;
-            return query.Count;
+            throw new NotImplementedException();
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
@@ -62,39 +60,30 @@ namespace ChallengeSets
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            object majority = null;
-            int count = 0;
-            object[] array = { };
-            for (int i = 0; i < array.Length; i++)
+            int nullCount = 0;
+            for (int i = 0; i < objs.Length; i++)
             {
-                if (array[i].Equals(majority))
-                {
-                    count++;
-                }
+                if (objs[i] == null) nullCount++;
             }
-            if (count > (array.Length / 2))
-            {
-                return true;
-            }
+            if (nullCount > objs.Length / 2) return true;
             return false;
 
         }
         public double AverageEvens(int[] numbers)
         {
-            if (numbers == null)
+            if (numbers == null) return 0;
+            double sum = 0, count = 0;
+            for (int i = 0; i < numbers.Length; i++)
             {
-                return 0;
-            }
-            double result = 0;
-            double average = numbers.Average();
-            foreach (int number in numbers)
-            {
-                if (number % 2 == 0)
+                if (numbers[i] % 2 == 0)
                 {
-                    result += number;
+                    sum += numbers[i];
+                    count++;
                 }
+
             }
-            return average;
+            if ((int)count == 0) return 0;
+            return sum / count;
         }
 
         public int Factorial(int number)
