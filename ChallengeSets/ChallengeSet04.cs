@@ -24,7 +24,83 @@ namespace ChallengeSets
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            throw new NotImplementedException();
+            //string[] strArr = str1.Split(' ');
+            //string[] strArr2 = str2.Split(' ');
+            //string[] strArr3 = str3.Split(' ');
+            //string[] strArr4 = str4.Split(' ');
+            //int maxx = int.MaxValue;
+
+            //foreach (string item in strArr)
+            //{
+            //    if (item.Length < maxx)
+            //    {
+            //        maxx = item.Length;
+            //    }
+            //}
+            //foreach (string item in strArr2)
+            //{
+            //    if (item.Length < maxx)
+            //    {
+            //        maxx = item.Length;
+            //    }
+            //}
+            //foreach (string item in strArr3)
+            //{
+            //    if (item.Length < maxx)
+            //    {
+            //        maxx = item.Length;
+            //    }
+            //}
+            //foreach (string item in strArr4)
+            //{
+            //    if (item.Length < maxx)
+            //    {
+            //        maxx = item.Length;
+            //    }
+            //}
+            //return maxx;
+            int word1 = str1.Length;
+            int word2 = str2.Length;
+            int word3 = str3.Length;
+            int word4 = str4.Length;
+            int count = 0;
+            if (word1 < word2 && word1 < word3 && word1 < word4)
+            {
+                for (int i = 0; i < str1.Length; i++)
+                {
+                    count++;
+                }
+            }
+            if (word2 <= word1 && word2 < word3 && word2 < word4)
+            {
+                for (int i = 0; i < str2.Length; i++)
+                {
+                    count++;
+                }
+            }
+            if (word3 < word1 && word3 < word2 && word3 < word4)
+            {
+                for (int i = 0; i < str3.Length; i++)
+                {
+                    count++;
+                }
+            }
+            if (word4 <= word1 && word4 <= word2 && word4 <= word3)
+            {
+                for (int i = 0; i < str4.Length; i++)
+                {
+                    count++;
+                }
+            }
+            if (word1 == word2 & word1 == word3 && word1 < word4)
+            {
+                for (int i = 0; i < str1.Length; i++)
+                {
+                    count++;
+                }
+            }
+            return count;
+
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
@@ -40,7 +116,11 @@ namespace ChallengeSets
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            if (sideLength1 + sideLength2 <= sideLength3 || sideLength1 + sideLength3 <= sideLength2 || sideLength2 + sideLength3 <= sideLength1)
+            {
+                return false;
+            }
+              return true;
         }
 
         public bool IsStringANumber(string input)
