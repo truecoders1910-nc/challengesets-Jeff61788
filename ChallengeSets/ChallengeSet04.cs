@@ -24,41 +24,6 @@ namespace ChallengeSets
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            //string[] strArr = str1.Split(' ');
-            //string[] strArr2 = str2.Split(' ');
-            //string[] strArr3 = str3.Split(' ');
-            //string[] strArr4 = str4.Split(' ');
-            //int maxx = int.MaxValue;
-
-            //foreach (string item in strArr)
-            //{
-            //    if (item.Length < maxx)
-            //    {
-            //        maxx = item.Length;
-            //    }
-            //}
-            //foreach (string item in strArr2)
-            //{
-            //    if (item.Length < maxx)
-            //    {
-            //        maxx = item.Length;
-            //    }
-            //}
-            //foreach (string item in strArr3)
-            //{
-            //    if (item.Length < maxx)
-            //    {
-            //        maxx = item.Length;
-            //    }
-            //}
-            //foreach (string item in strArr4)
-            //{
-            //    if (item.Length < maxx)
-            //    {
-            //        maxx = item.Length;
-            //    }
-            //}
-            //return maxx;
             int word1 = str1.Length;
             int word2 = str2.Length;
             int word3 = str3.Length;
@@ -111,7 +76,7 @@ namespace ChallengeSets
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
-            throw new NotImplementedException();
+            biz.Name = "TrueCoders";
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
