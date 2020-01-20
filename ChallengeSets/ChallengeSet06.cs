@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengeSets
 {
@@ -7,12 +8,42 @@ namespace ChallengeSets
     {
         public bool CollectionContainsWord(IEnumerable<string> words, string word, bool ignoreCase)
         {
-            throw new NotImplementedException();
+            if (words == null)
+            {
+                return false;
+            }
+            if (words.Contains(word) == true)
+            {
+                return true;
+            }
+            if (words.Contains(word, StringComparer.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public bool IsPrimeNumber(int num)
         {
-            throw new NotImplementedException();
+            if (num <= 0 || num == 1)
+            {
+                return false;
+            }
+            else
+            {
+                for (int a = 2; a <= num / 2; a++)
+                {
+                    if (num % a == 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
 
         public int IndexOfLastUniqueLetter(string str)
