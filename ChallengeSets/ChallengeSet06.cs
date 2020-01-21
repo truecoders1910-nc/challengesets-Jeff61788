@@ -53,12 +53,44 @@ namespace ChallengeSets
 
         public int MaxConsecutiveCount(int[] numbers)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            int max = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for (int j = 0; j < numbers.Length; j++)
+                {
+                    if (numbers[i] == numbers[j])
+                    {
+                        count++;
+                        if (count > max)
+                            max = count;
+                    }
+                    else
+                    {
+                        count = 0;
+                    }
+                }
+            }
+            return max;
         }
 
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            double[] emptyArr = new double[] { };
+            if (elements == null)
+            {
+                return emptyArr;
+            }
+            if (n <= 0)
+            {
+                return emptyArr;
+            }
+            double[] result = new double[elements.Count / n];
+            for (int i = n -1; i < elements.Count; i += n)
+            {
+                result[i / n] = elements[i];
+            }
+            return result;
         }
     }
 }
