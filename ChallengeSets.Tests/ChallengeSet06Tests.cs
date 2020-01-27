@@ -37,6 +37,7 @@ namespace ChallengeSets.Tests
         [InlineData(2, true)]
         [InlineData(3, true)]
         [InlineData(5, true)]
+        [InlineData(9, false)]
         [InlineData(1523, true)]
         [InlineData(26357, true)]
         [InlineData(37117, true)]

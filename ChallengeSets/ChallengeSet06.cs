@@ -12,19 +12,31 @@ namespace ChallengeSets
             {
                 return false;
             }
-            if (words.Contains(word) == true)
+            if (ignoreCase == true)
             {
-                return true;
-            }
-            if (words.Contains(word, StringComparer.OrdinalIgnoreCase))
-            {
-                return true;
-            }
-            else
-            {
+                words = words.Where(s => !String.IsNullOrEmpty(s)).ToArray();
+                foreach (var n in words)
+                {
+                    var m = n.ToLower();
+                    if (m == word)
+                    {
+                        return true;
+                    }
+                }
                 return false;
             }
-
+            else if (ignoreCase == false)
+            {
+                foreach (var n in words)
+                {
+                    if (n == word)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            else return false;
         }
 
         public bool IsPrimeNumber(int num)
@@ -48,7 +60,23 @@ namespace ChallengeSets
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            var occurrenceChar = new Dictionary<char, int>();
+            // Parse the string to count occurrence
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (occurrenceChar.ContainsKey(str[i]))
+                    occurrenceChar[str[i]]++;
+                else
+                    occurrenceChar.Add(str[i], 1);
+            }
+            // Parse backward the string to find the last one with occurrence == 1
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                var occurrence = occurrenceChar[str[i]];
+                if (occurrence == 1)
+                    return i;
+            }
+            return -1;
         }
 
         public int MaxConsecutiveCount(int[] numbers)
@@ -77,11 +105,7 @@ namespace ChallengeSets
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
             double[] emptyArr = new double[] { };
-            if (elements == null)
-            {
-                return emptyArr;
-            }
-            if (n <= 0)
+            if (elements == null || n <= 0)
             {
                 return emptyArr;
             }
